@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 
 
 def main(request):
+   print(f" from main {request.session['xz']}")
    return HttpResponse("hehe")
 
 def main_test(request, test: str):
@@ -19,6 +20,17 @@ def main_test2(request):
    }
    return render(request, "aba.html", aba)
    #return HttpResponse("qqqqqq")
+
+
+def main_of_session(request):
+   request.session['cake'] = "lovely"
+   #print(request.session)
+   #print(request.session['cake'])
+   #print('cake' in request.session)
+   #print('cake2' in request.session)
+   return HttpResponse("hehe")
+
+
 
 
 def kz_file(response):
