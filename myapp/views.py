@@ -28,9 +28,10 @@ def main_test2(request):
 
 
 def Main_pg2(request):
-   qz1 = Accounts.objects.get(id=1)
+   #qz1 = Accounts.objects.get(id=1)
    #print(qz1.name)
-   print(qz1.surn)
+   #print(qz1.surn)
+   print(" user ", request.user.is_authenticated)
    return render(request, "home.html")
 
 
@@ -43,7 +44,36 @@ def main_of_session(request):
    return HttpResponse("hehe")
 
 
+####### login / logout / signup ########
 
+def logout(request):
+   from django.contrib.auth import logout
+   from django.http import HttpResponse
+   logout(request)
+   return HttpResponse("you are out now!")
+
+
+def login(request):
+   from django.contrib.auth import login, authenticate
+   from django.http import HttpResponse
+   from django.shortcuts import redirect
+
+
+   usr2 = 'Phantom'
+   pass2 = '123456'
+   usrent = authenticate(request, username=usr2, password=pass2)
+   
+   if usrent:
+       login(request, usrent)    
+       return redirect('/')
+   else:
+       print(f"is credentials {request.user.is_authenticated}")
+       return HttpResponse(f"nope {request.user.is_authenticated}")
+
+
+
+
+#####################
 
 def kz_file(response):
    #ffl1 = open("files/aba.txt", "rb")
@@ -52,3 +82,8 @@ def kz_file(response):
    #resp = HttpResponse(response)
    return res
    
+
+
+
+
+

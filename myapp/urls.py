@@ -7,5 +7,7 @@ urlpatterns = [
     path('file/<str:test>/', views.main_test, name="main_test"),
     path('xz/', views.main_test2, name="main_test2"),
     path('session/', views.main_of_session, name="main_of_session"),
-    path('', views.Main_pg2, name="Main_pg2")
+    path('', views.Main_pg2, name="Main_pg2"),
+    path('logout/', views.logout, name="logout"),
+    path('login', views.login, name="login")
 ]
