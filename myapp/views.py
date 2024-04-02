@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.http import FileResponse
 from django.shortcuts import render, redirect
 
+#from myapp.models import Accounts
+from .models import Accounts
+
+
 # Create your views here.
 
 
@@ -24,6 +28,9 @@ def main_test2(request):
 
 
 def Main_pg2(request):
+   qz1 = Accounts.objects.get(id=1)
+   #print(qz1.name)
+   print(qz1.surn)
    return render(request, "home.html")
 
 
