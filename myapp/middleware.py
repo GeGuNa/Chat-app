@@ -16,7 +16,11 @@ class MyMiddleware:
         request.session['xz'] = "attest"
            
         
+        #print("before response")
         response = self.get_response(request)
+        #print("After response")
+
+
 
         # Code to be executed for each request/response after
         # the view is called.

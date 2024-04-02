@@ -1,0 +1,106 @@
+body {
+background:#dcd0d0;
+color:#fff !important; 
+margin:0;
+padding:0;
+font-family:Helvetica;
+font-size:16px;
+font-weight:400;
+}
+
+a {
+text-decoration: none;
+color: #000;
+}
+
+
+:root {
+   --main-color: #417690;
+}
+
+.header {
+   background: var(--main-color);
+   padding:10px;
+}
+
+.cntr12 {
+margin-top:150px;
+}
+
+
+.form-row {
+    padding: 10px 0;
+}
+
+
+form label {
+    display: block;
+    margin: 0 22px 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+
+.h5 {
+color:#000;
+padding: 10px 20px;
+text-align:center;
+}
+
+
+form input {
+   outline: none;
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    width: 90%;
+    border: 0;
+    margin-left: 22px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    transition: 0.3s ease;
+}
+
+
+
+
+form button {
+    outline: none;
+    background: var(--main-color);
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.btn1_2 {
+    margin-top: 15px;
+    width: 88%;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.cntr1 {
+   padding: 20px 30px;
+   background: #fff;
+   border-radius: 10px;
+   margin:auto;
+   width:500px;
+}

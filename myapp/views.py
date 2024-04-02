@@ -22,6 +22,11 @@ def main_test2(request):
    #return HttpResponse("qqqqqq")
 
 
+
+def Main_pg2(request):
+   return render(request, "home.html")
+
+
 def main_of_session(request):
    request.session['cake'] = "lovely"
    #print(request.session)

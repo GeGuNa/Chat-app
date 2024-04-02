@@ -1,0 +1,93 @@
+{% extends 'main.html' %}
+
+
+{% block title%} 
+
+   Main
+
+{% endblock %} 
+
+
+   
+
+{% block body%} 
+
+   
+   
+   
+   
+ <div class="container" tabindex="-1">
+      
+        
+      
+<div class="cntr12">
+
+
+
+
+
+
+         <div class="cntr1">
+
+
+            
+            
+            <h5 class="h5">Enter your credentials</h5>
+
+
+         <form action="/admin/login/?next=/admin/" method="post">
+   
+   
+   
+   
+           <div class="form-row">
+             <label>Username:</label> 
+             <input type="text" name="username"  maxlength="150" required="">
+           </div>
+           
+           <div class="form-row">
+             
+             <label>Password:</label> 
+             <input type="password" name="password"required="">
+   
+           </div>
+           
+           
+           <div class="btn1_2">
+               <button>Login</button>
+           </div>
+           
+           
+         </form>
+
+         </div>
+
+                
+   
+        
+
+
+
+</div>
+
+
+</div>
+      
+      
+
+   
+   
+   
+   
+   
+   
+   
+
+{% endblock %}
+
+
+{% block footer%}
+
+   footer
+
+ {% endblock %}
