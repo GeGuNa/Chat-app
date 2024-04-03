@@ -32,19 +32,22 @@
 
             
             
-            <h5 class="h5">Enter your credentials</h5>
-   {% if request.user %}
-   <p style="color:#000;">  {{request.user.username}} </p>
-   {% endif %}
-         <form action="#" method="post">
+            <h5 class="h5">Sign up</h5>
+         <form action="/signup/" method="post">
    
-   
+         {% csrf_token %}
    
    
            <div class="form-row">
              <label>Username:</label> 
              <input type="text" name="username"  maxlength="150" required="">
            </div>
+ 
+            <div class="form-row">
+             <label>Email:</label> 
+             <input type="email" name="email"  maxlength="150" required="">
+           </div>
+ 
            
            <div class="form-row">
              
@@ -55,7 +58,7 @@
            
            
            <div class="btn1_2">
-               <button>Login</button>
+               <button>Sign up</button>
            </div>
            
            

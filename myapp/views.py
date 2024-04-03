@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import FileResponse
 from django.shortcuts import render, redirect
@@ -27,12 +26,49 @@ def main_test2(request):
 
 
 
-def Main_pg2(request):
+def main(request):
    #qz1 = Accounts.objects.get(id=1)
    #print(qz1.name)
    #print(qz1.surn)
    print(" user ", request.user.is_authenticated)
    return render(request, "home.html")
+
+
+
+def signup(request):
+   
+   from django.contrib.auth.models import User
+   from django.contrib.auth import login
+   
+   
+   print(" user ", request.user.is_authenticated)
+   
+   if request.user.is_authenticated:
+      return redirect("/")
+   
+   if request.method == "POST":
+       v_usr = request.POST['username']
+      
+       try:
+            Kz_usr1 = User.objects.get(username=v_usr)
+       except User.DoesNotExist:  
+
+            v_usrpass = request.POST['password']
+            v_usremail =  request.POST['email']
+            
+            print(f"  usr  {v_usr}")
+            
+            Kz_usr = User.objects.create_user(v_usr, v_usremail, v_usrpass)
+            Kz_usr.save()
+            
+            login(request, Kz_usr)
+            
+            #now we can redirect user to main page
+            return redirect("/")
+      
+   return render(request, "signup.html")
+
+
 
 
 def main_of_session(request):
