@@ -1,5 +1,164 @@
 .cfelx1 {
    display:flex;
    flex-wrap:nowrap;
-   gap:20px;
+   /*gap:20px;*/
+   overflow:hidden;
+}
+
+.flq_20per {
+width:20%;
+overflow:hidden;
+}
+
+.flq_80per {
+width:80%;
+overflow:hidden;
+}
+
+
+.leftSide {
+    width: 100%;
+    background: #e5e8ef;
+    height:100%; 
+}
+
+
+
+.wm10 {
+width:90%;
+margin:auto;
+overflow:hidden;
+}
+
+.widget {
+   border-radius:10px;
+   background:#fff;
+   padding:10px;
+}
+
+.widget p {
+   color:#000;
+}
+
+a {
+    color: rgb(38, 38, 38) !important;
+}
+
+svg {
+color: #000;
+}
+
+.mrtop20 {
+margin-top:20px;
+}
+
+
+.widget ul li {
+//padding-bottom:10px;
+}
+
+
+
+.widget ul li a {
+    display: flex;
+    gap: 7px;
+    padding: 7px;
+    font-weight: 500;
+}
+
+.widget ul li a svg {
+    font-size: 22px;
+}
+
+
+.onLineDivFlex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+.onLineDivFlex a {
+    color: #447bba !important;
+}
+
+
+.wmForDivsion {
+display:flex;
+width:100%;
+gap:15px;
+overflow:hidden;
+}
+
+
+
+.wmForDivsion .wmForDivsion_80 {width:80%; overflow:hidden; }
+
+.wmForDivsion  .wmForDivsion_20 {width:20%; overflow:hidden; }
+
+
+.wm99 {
+width:99%;
+margin:auto;
+}
+
+
+.text {
+    color: rgb(38, 38, 38) !important;
+}
+
+
+.flq_60per {width: 60%; overflow: hidden; }
+.flq_65per {width: 65%; overflow: hidden; }
+.flq_70per {width: 70%; overflow: hidden; }
+.flq_30per {width: 30%; overflow: hidden; }
+.flq_10per {width: 10%; overflow: hidden; }
+.flq_15per {width: 15%; overflow: hidden; }
+
+.flq_20forRightSSSide { width: 20%;overflow: hidden; }
+
+
+.klz_1zqq1 {
+height: 100vh;
+background:#fff;
+}
+
+
+.zppq_z15 {
+padding-top:15px;
+}
+
+
+.tcenter{ 
+    text-align: center;
+}
+
+
+.ulMnForOnlineSusers {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.ulMnForOnlineSusers li:hover{
+   background:#ddd;
+}
+
+.ulMnForOnlineSusers li img {
+   /*max-width:30%;*/
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right:5px;
+}
+
+
+.ulMnForOnlineSusers li {
+padding:10px;
 }
