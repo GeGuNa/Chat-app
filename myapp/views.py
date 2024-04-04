@@ -35,7 +35,9 @@ def ProfilePic(request):
    if request.method == 'POST' and request.FILES['Uploaded_File']:
                   ReqFile = request.FILES['Uploaded_File']
                   fs = FileSystemStorage()
-                  file = fs.save(ReqFile.name, ReqFile)
+                  #fs = FileSystemStorage("myapp/kz1")
+                  fs.save(ReqFile.name, ReqFile)
+                  #file = fs.save(ReqFile.name, ReqFile)
 
    return render(request, "file.html")
 
