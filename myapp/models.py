@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models import Model
+from django.contrib.auth.models import User
+
 import datetime
 
 
@@ -29,4 +31,6 @@ class Accounts(Model):
    year = models.IntegerField(default=0)
    level = models.IntegerField(default=0)
    when = models.DateTimeField(auto_now=True)
-   uid = models.PositiveBigIntegerField()
+   picurl = models.CharField(max_length=300, default='nope')
+   #uid = models.PositiveBigIntegerField()
+   uid = models.ForeignKey(User, on_delete=models.CASCADE, default=0)

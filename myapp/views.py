@@ -73,7 +73,7 @@ def signup(request):
    
    from django.contrib.auth.models import User
    from django.contrib.auth import login
-   
+   from .models import Accounts
    
    print(" user ", request.user.is_authenticated)
    
@@ -94,6 +94,10 @@ def signup(request):
             
             Kz_usr = User.objects.create_user(v_usr, v_usremail, v_usrpass)
             Kz_usr.save()
+            
+            varq1_qc = Accounts(uid=Kz_usr)
+            varq1_qc.save()
+            
             
             login(request, Kz_usr)
             
