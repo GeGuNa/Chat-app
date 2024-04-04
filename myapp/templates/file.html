@@ -1,0 +1,85 @@
+{% extends 'main.html' %}
+
+
+{% block title%} 
+
+   Main
+
+{% endblock %} 
+
+
+   
+
+{% block body%} 
+
+
+   
+ <div class="container" tabindex="-1">
+      
+        
+      
+<div class="cntr12">
+
+<!--
+   <img src="/media/2507.jpg"/>
+-->
+
+
+         <div class="cntr1">
+
+
+            
+            
+            <h5 class="h5">Upload your pic</h5>
+   
+         <form action="?" method="post" enctype="multipart/form-data">
+         
+         {% csrf_token %}
+
+           
+           <div class="form-row">
+             
+             <label>File:</label> 
+             <input type="file" name="Uploaded_File"required="">
+   
+           </div>
+           
+           
+           <div class="btn1_2">
+               <button name="go">Upload</button>
+           </div>
+           
+           
+         </form>
+
+         </div>
+
+                
+   
+        
+
+
+
+</div>
+
+
+</div>
+      
+      
+
+   
+   
+   
+   
+   
+   
+   
+
+{% endblock %}
+
+
+{% block footer%}
+
+   footer
+
+ {% endblock %}

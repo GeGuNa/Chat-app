@@ -25,6 +25,22 @@ def main_test2(request):
    #return HttpResponse("qqqqqq")
 
 
+def ProfilePic(request):
+   from .funcs import handle_uploaded_file
+   from django.core.files.storage import FileSystemStorage
+
+   #if request.method == "POST":
+      #handle_uploaded_file(request.FILES['fileee'])
+
+   if request.method == 'POST' and request.FILES['Uploaded_File']:
+                  ReqFile = request.FILES['Uploaded_File']
+                  fs = FileSystemStorage()
+                  file = fs.save(ReqFile.name, ReqFile)
+
+   return render(request, "file.html")
+
+   
+
 
 def main(request):
       

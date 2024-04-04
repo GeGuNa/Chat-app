@@ -14,6 +14,8 @@ from pathlib import Path
 import os 
 
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +30,7 @@ SECRET_KEY = 'django-insecure-r8^fa3m0jt3^6igo4n$6t6-gs#^5#2m##wt(v+&cyl02wwg6hf
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+#ALLOWED_HOSTS = ['127.0.0.1','*']
 
 # Application definition
 
@@ -132,8 +134,8 @@ STATIC_URL = "static/"   # e.g. localhost:80/static/styles.css
 MEDIA_URL = "media/"     # e.g. localhost:80/media/image.jpg
 
 
-STATIC_ROOT = "static/"
-MEDIA_ROOT = "media/"
+STATIC_ROOT = BASE_DIR / "myapp/static/"
+MEDIA_ROOT = BASE_DIR / "myapp/media/"
 
 
 

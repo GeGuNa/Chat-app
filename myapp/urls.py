@@ -10,5 +10,6 @@ urlpatterns = [
     path('', views.main, name="main"),
     path('logout/', views.logout, name="logout"),
     path('login/', views.login, name="login"),
-    path('signup/', views.signup, name="registration")
+    path('signup/', views.signup, name="registration"),
+    path('Avatar/', views.ProfilePic, name="ProfilePic"),
 ]
