@@ -162,3 +162,26 @@ padding-top:15px;
 .ulMnForOnlineSusers li {
 padding:10px;
 }
+
+
+
+.wm99 {
+    width: 99%;
+    margin: auto -5px;
+}
+
+
+.widgetForChatS {
+    margin-top: 15px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.BreakingThword {
+    overflow: hidden;
+    word-break: break-all;
+}

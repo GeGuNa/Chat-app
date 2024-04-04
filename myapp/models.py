@@ -11,6 +11,7 @@ class Chat(Model):
     when = models.DateTimeField()
     text = models.CharField()
     post_type = models.CharField(max_length=10)
+    us_id = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
     
     
 class Book(Model):

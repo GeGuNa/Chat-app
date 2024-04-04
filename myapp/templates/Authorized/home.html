@@ -176,23 +176,25 @@
                         
        <div class="chat-txt"> 
           
-          <div class="row">
-             
-            <div class="col-2">
-               <img width="40" src="/media/us_man.png"/>
-            </div>
+          <form action="?" method="post">
+             {% csrf_token %}
+             <div class="row">
+                
+               <div class="col-2">
+                  <img width="40" src="/media/us_man.png"/>
+               </div>
+                  
+               <div class="col-8">
+                  <input type="text" name="txt" class="form-control">
+               </div>
                
-            <div class="col-8">
-               <input type="text" class="form-control">
-            </div>
-            
-            <div class="col-2">
-               <button class="btn btn-danger">Send</button> 
-            </div>
-               
-          </div>
+               <div class="col-2">
+                  <button class="btn btn-danger">Send</button> 
+               </div>
+                  
+             </div>
                            
-                           
+          </form>                 
                            
                            
                            
@@ -202,8 +204,32 @@
       
       
       
+      
+      
       </div>
       
+      
+      
+        <div class="widgetForChatS">
+      
+               {% for Fetch in Data %}
+                  
+                     <div class="text" style="">
+                        
+            
+                Post id:  {{Fetch.id}} <br/> 
+                  poster:  {{Fetch.poster}} <br/>    
+                   reply_type  {{Fetch.reply}} <br/>
+                     Text: <p class="BreakingThword">{{Fetch.text}}</p> <br/>
+                    type:  {{Fetch.post_type}} <br/>
+                     Username  {{Fetch.us_id.username}} <br/>   
+                     When posted {{ Fetch.us_id.last_login }} 
+                       <br/>
+                       -------------------------------------
+                     </div>
+             
+               {% endfor %}
+         </div>
             
       
       

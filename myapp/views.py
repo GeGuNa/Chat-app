@@ -48,7 +48,11 @@ def main(request):
       
    from django.contrib.auth import login, authenticate
    from django.shortcuts import redirect
-
+   
+   from .models import Chat 
+   import datetime
+   
+   
    if not request.user.is_authenticated:
       if request.method == "POST":
          usr2 = request.POST['username']
@@ -61,11 +65,28 @@ def main(request):
          
    
    if request.user.is_authenticated:
+      
+      ChatQFet = Chat.objects.all()
+      
+      
+      fqFData = {
+         'Data': ChatQFet
+      }
+
       mnfil = "Authorized/home.html"
+      
+      if request.method == "POST":
+            rqText = request.POST.get('txt')
+            x = datetime.datetime.now()
+
+            KinserTadat = Chat(poster=0,reply=0,text=rqText,post_type="xz",us_id=request.user, when=x)
+            KinserTadat.save()
+            return redirect('/')
+            
+            
+      return render(request, mnfil, fqFData)
    else:
-      mnfil = "home.html"
-   
-   return render(request, mnfil)
+      return render(request, "home.html")
 
 
 
