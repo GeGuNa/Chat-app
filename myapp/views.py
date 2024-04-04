@@ -27,11 +27,27 @@ def main_test2(request):
 
 
 def main(request):
-   #qz1 = Accounts.objects.get(id=1)
-   #print(qz1.name)
-   #print(qz1.surn)
-   print(" user ", request.user.is_authenticated)
-   return render(request, "home.html")
+      
+   from django.contrib.auth import login, authenticate
+   from django.shortcuts import redirect
+
+   if not request.user.is_authenticated:
+      if request.method == "POST":
+         usr2 = request.POST['username']
+         pass2 = request.POST['password']
+         usrent = authenticate(request, username=usr2, password=pass2)
+         
+         if usrent:
+             login(request, usrent)    
+             return redirect('/')
+         
+   
+   if request.user.is_authenticated:
+      mnfil = "Authorized/home.html"
+   else:
+      mnfil = "home.html"
+   
+   return render(request, mnfil)
 
 
 

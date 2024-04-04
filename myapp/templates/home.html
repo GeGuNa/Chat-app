@@ -33,11 +33,10 @@
             
             
             <h5 class="h5">Enter your credentials</h5>
-   {% if request.user %}
-   <p style="color:#000;">  {{request.user.username}} </p>
-   {% endif %}
-         <form action="#" method="post">
    
+         <form action="/" method="post">
+         
+         {% csrf_token %}
    
    
    
@@ -55,7 +54,7 @@
            
            
            <div class="btn1_2">
-               <button>Login</button>
+               <button name="go">Login</button>
            </div>
            
            
