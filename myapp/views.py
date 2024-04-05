@@ -135,6 +135,41 @@ def main(request):
 
 
 
+def main_of_session(request):
+   request.session['cake'] = "lovely"
+   #print(request.session)
+   #print(request.session['cake'])
+   #print('cake' in request.session)
+   #print('cake2' in request.session)
+   return HttpResponse("hehe")
+
+
+"""
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def change_password(request, new_password):
+    user = request.user
+    user.set_password(new_password)
+    user.save()
+
+
+@login_required
+def change_password_view(request):
+    if request.method == 'POST':
+        new_password = request.POST.get('new_password')
+        change_password(request, new_password)
+        return HttpResponse('Password changed successfully!')
+    else:
+        return HttpResponse('Method not allowed.', status=405)
+"""
+
+
+
+####### login / logout / signup ########
+
+
+
 def signup(request):
    
    from django.contrib.auth.models import User
@@ -175,38 +210,7 @@ def signup(request):
 
 
 
-def main_of_session(request):
-   request.session['cake'] = "lovely"
-   #print(request.session)
-   #print(request.session['cake'])
-   #print('cake' in request.session)
-   #print('cake2' in request.session)
-   return HttpResponse("hehe")
 
-
-
-from django.contrib.auth.decorators import login_required
-
-@login_required
-def change_password(request, new_password):
-    user = request.user
-    user.set_password(new_password)
-    user.save()
-
-
-@login_required
-def change_password_view(request):
-    if request.method == 'POST':
-        new_password = request.POST.get('new_password')
-        change_password(request, new_password)
-        return HttpResponse('Password changed successfully!')
-    else:
-        return HttpResponse('Method not allowed.', status=405)
-
-
-
-
-####### login / logout / signup ########
 
 def logout(request):
    from django.contrib.auth import logout
@@ -237,7 +241,23 @@ def login(request):
 
 
 
-#####################
+####################################################################################
+
+
+def Dsp_user_images(response, usr: int):
+   
+
+   
+   try:
+      ffl1 = open(f"myapp/media/user_photos/{usr}.jpg", "rb")
+      res = FileResponse(ffl1)
+   except:
+      res = HttpResponse("UUuups")
+      
+   return res
+   
+   
+   
 
 def kz_file(response):
    #ffl1 = open("files/aba.txt", "rb")
