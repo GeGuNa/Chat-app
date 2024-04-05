@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 
 #from myapp.models import Accounts
 from .models import Accounts
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -144,8 +145,63 @@ def main_of_session(request):
    return HttpResponse("hehe")
 
 
+
+@login_required
+def User_Profile(request, us_id: int):
+   hp = HttpResponse(f"  profile_id {us_id}")
+   return hp
+   
+   
+@login_required
+def Block_user(request, us_id: int):
+   hp = HttpResponse(f"  Block {us_id}")
+   return hp
+   
+   
+@login_required
+def UnBlock_user(request, us_id: int):
+   hp = HttpResponse(f"  Unblock {us_id}")
+   return hp   
+
+
+@login_required
+def Give_gifts(request, us_id: int):
+   hp = HttpResponse(f"  Gift something to the user {us_id}")
+   return hp   
+
+@login_required
+def Give_main(request):
+   resp = HttpResponse(f"  Gift categories {us_id}")
+   return resp  
+
+@login_required
+def Gives(request):
+   resp = HttpResponse(f"  User gifts {us_id}")
+   return resp  
+
+
+
+@login_required
+def Contact(request):
+   hp = HttpResponse("Contacts with whom you have chatted")
+   return hp
+   
+
+@login_required
+def Contact_messages(request, usr_id: int):
+   hp = HttpResponse(f" chat_id {usr_id}")
+   return hp
+   
+
+@login_required
+def Contact_message_rem(request, usr_id: int, post_id: int):
+   hp = HttpResponse(f" chat_post_rem {usr_id}  post_id {post_id} ")
+   return hp
+
+
+
+
 """
-from django.contrib.auth.decorators import login_required
 
 @login_required
 def change_password(request, new_password):
