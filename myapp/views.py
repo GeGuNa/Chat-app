@@ -163,22 +163,24 @@ def UnBlock_user(request, us_id: int):
    hp = HttpResponse(f"  Unblock {us_id}")
    return hp   
 
+############# gifts 
 
 @login_required
-def Give_gifts(request, us_id: int):
-   hp = HttpResponse(f"  Gift something to the user {us_id}")
-   return hp   
+def Giving_gifts(request, us_id: int, gift_id: int):
+   resp = HttpResponse(f"  Gift something to the user {us_id}")
+   return resp   
 
 @login_required
-def Give_main(request):
+def Gifts_categories(request, us_id: int):
    resp = HttpResponse(f"  Gift categories {us_id}")
    return resp  
 
 @login_required
-def Gives(request):
+def Gifts(request, us_id: int):
    resp = HttpResponse(f"  User gifts {us_id}")
    return resp  
 
+################
 
 
 @login_required
