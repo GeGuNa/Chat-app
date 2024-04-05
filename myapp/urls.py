@@ -14,4 +14,6 @@ urlpatterns = [
     path('Avatar/', views.ProfilePic, name="ProfilePic"),
     path('User/change_pass/', views.pass_Changing, name="Change_pass"),
     path('usr/photos/<int:usr>/', views.Dsp_user_images, name="dsusrpht"),
+    path('contacts/', views.Contact, name="Contacts"),
+    path('contacts/message/<int:usr_id>', views.Contact_messages, name="Contacts"),
 ]

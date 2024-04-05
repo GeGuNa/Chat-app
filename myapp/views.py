@@ -183,13 +183,13 @@ def Gives(request):
 
 @login_required
 def Contact(request):
-   hp = HttpResponse("Contacts with whom you have chatted")
-   return hp
+   resp = HttpResponse("Contacts with whom you have chatted")
+   return resp
    
 
 @login_required
 def Contact_messages(request, usr_id: int):
-   hp = HttpResponse(f" chat_id {usr_id}")
+   hp = HttpResponse(f" chatting with the {usr_id}")
    return hp
    
 
