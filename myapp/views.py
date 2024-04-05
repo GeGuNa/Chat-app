@@ -184,6 +184,21 @@ def main_of_session(request):
    return HttpResponse("hehe")
 
 
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def change_password_view(request):
+    if request.method == 'POST':
+        new_password = request.POST.get('new_password')
+        change_password(request, new_password)
+        return HttpResponse('Password changed successfully!')
+    else:
+        return HttpResponse('Method not allowed.', status=405)
+
+
+
+
 ####### login / logout / signup ########
 
 def logout(request):
