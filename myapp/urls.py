@@ -16,4 +16,5 @@ urlpatterns = [
     path('usr/photos/<int:usr>/', views.Dsp_user_images, name="dsusrpht"),
     path('contacts/', views.Contact, name="Contacts"),
     path('contacts/message/<int:usr_id>', views.Contact_messages, name="Contacts"),
+    path('contacts/message/<int:usr_id>/<int:post_id>/', views.Contact_message_rem, name="removing_message"),
 ]
