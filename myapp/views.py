@@ -188,6 +188,13 @@ def main_of_session(request):
 from django.contrib.auth.decorators import login_required
 
 @login_required
+def change_password(request, new_password):
+    user = request.user
+    user.set_password(new_password)
+    user.save()
+
+
+@login_required
 def change_password_view(request):
     if request.method == 'POST':
         new_password = request.POST.get('new_password')
