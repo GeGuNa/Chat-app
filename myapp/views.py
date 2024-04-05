@@ -147,6 +147,28 @@ def main_of_session(request):
 
 
 @login_required
+def removing_chat_post(request, post_id: int):
+   
+   from myapp.models import Chat
+   
+
+   try:
+      
+      resp = HttpResponse(f"  chatpost id {post_id}")
+      Kfchq = Chat.objects.get(id=post_id)
+      
+   except:
+      resp = HttpResponse("Some error")
+      #print(Kfchq.text)
+   
+   
+   
+   #redirect("")
+   return resp
+
+
+
+@login_required
 def User_Profile(request, us_id: int):
    hp = HttpResponse(f"  profile_id {us_id}")
    return hp
