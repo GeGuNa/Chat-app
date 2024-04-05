@@ -25,6 +25,51 @@ def main_test2(request):
    #return HttpResponse("qqqqqq")
 
 
+def pass_Changing(request):
+   if request.user.is_authenticated == False:
+      return redirect('/')
+      #uups boys 
+   
+   
+   
+   from django.contrib import messages
+   from django.contrib.auth import login
+   
+   page = "Authorized/Password.html"
+   
+   
+   kq1_q = request.user
+   #Ksus1 = kq1_q.is_authenticated
+   #print(kq1_q.check_password("123456"))
+   
+   if request.method == "POST":
+      var_q1 = request.POST.get('npass')
+      var_q2 = request.POST.get('opass')
+      
+      if len(var_q1)<5 or len(var_q2)<5:
+         messages.error(request,"Passwords cannot be lesser than 5 symbols")
+      elif len(var_q1)>100 or len(var_q2)>100:
+         messages.error(request,"Passwords cannot be greather than 100 symbols")
+      elif var_q2 == var_q1:
+         messages.error(request,"Old password and new password cannot be the same")
+      elif request.user.check_password(var_q2) is False:
+         messages.error(request,"Old password is incorrect")
+      else:
+         
+         user1 = request.user
+         user1.set_password(var_q1)
+         user1.save()
+         
+         login(request, user1)
+         
+         #vqq_ch = request.user.set_password(var_q1)
+         #vqq_ch.save()
+         messages.success(request,"Password has been changed")
+         
+      
+   return render(request, page)
+
+
 def ProfilePic(request):
    from .funcs import handle_uploaded_file
    from django.core.files.storage import FileSystemStorage
@@ -144,8 +189,10 @@ def main_of_session(request):
 def logout(request):
    from django.contrib.auth import logout
    from django.http import HttpResponse
+   #from django.shortcuts import redirect
    logout(request)
-   return HttpResponse("you are out now!")
+   #return HttpResponse("you are out now!")
+   return redirect('/')
 
 
 def login(request):

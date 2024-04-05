@@ -185,3 +185,50 @@ padding:10px;
     overflow: hidden;
     word-break: break-all;
 }
+
+
+
+.pstrHr1d {
+    display: flex;
+    height: 52px;
+    padding-left: 10px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 21px;
+    background: #fff;
+    color: #1c2b33 !important;
+    white-space: pre-line;
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+   outline:none !important;
+   border: 0 !important;
+}
+
+
+.form-control {
+   outline:none !important;
+   border: 0 !important;
+}
+
+
+.mrbot15q {
+margin-top:15px;
+}
+
+
+
+.nbtn {
+    margin: 0 22px 10px;
+    color: #ffffff;
+    background: #447bba;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 10px 12px;
+    cursor: pointer;
+    width: 10%;
+}
+
+
