@@ -170,6 +170,26 @@ def removing_chat_post(request, post_id: int):
 
 
 
+
+@login_required
+def Users_list(request):
+
+   from django.contrib.auth.models import User
+   try:
+      usrs1a = User.objects.all()
+      resp = HttpResponse("user lists")
+      
+      #print(usrs1a)
+      
+   except:
+      resp = HttpResponse("Some error")
+
+   return resp
+
+
+
+
+
 @login_required
 def User_Profile(request, us_id: int):
    
