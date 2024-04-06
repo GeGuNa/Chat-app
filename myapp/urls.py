@@ -18,5 +18,5 @@ urlpatterns = [
     path('contacts/message/<int:usr_id>', views.Contact_messages, name="Contacts"),
     path('contacts/message/<int:usr_id>/<int:post_id>/', views.Contact_message_rem, name="removing_message"),
     path('rchatpost/<int:post_id>/', views.removing_chat_post, name="rm_chat_pot1q"),
-
+    path('user/<int:us_id>/', views.User_Profile, name="usrDatas"),
 ]

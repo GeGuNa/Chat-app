@@ -156,6 +156,8 @@ def removing_chat_post(request, post_id: int):
       
       resp = HttpResponse(f"  chatpost id {post_id}")
       Kfchq = Chat.objects.get(id=post_id)
+      Kfchq.delete()
+      #now its done
       
    except:
       resp = HttpResponse("Some error")
@@ -170,8 +172,27 @@ def removing_chat_post(request, post_id: int):
 
 @login_required
 def User_Profile(request, us_id: int):
-   hp = HttpResponse(f"  profile_id {us_id}")
-   return hp
+   
+   
+   from django.contrib.auth.models import User
+   
+
+   try:
+      
+      resp = HttpResponse(f"  user_id {us_id}")
+      Kuser_id = User.objects.get(id=us_id)
+   
+      #now its done
+      print(Kuser_id.username)
+   except:
+      resp = HttpResponse("User cannot be found sorry ")
+
+   
+   
+   
+   
+   
+   return resp
    
    
 @login_required
