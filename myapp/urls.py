@@ -20,4 +20,5 @@ urlpatterns = [
     path('rchatpost/<int:post_id>/', views.removing_chat_post, name="rm_chat_pot1q"),
     path('user/<int:us_id>/', views.User_Profile, name="usrDatas"),
     path('users/', views.Users_list, name="Users_list"),
+    path('gallery/', views.Gallery_main, name="Gallery"),
 ]

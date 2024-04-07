@@ -225,6 +225,34 @@ def Block_user(request, us_id: int):
 def UnBlock_user(request, us_id: int):
    hp = HttpResponse(f"  Unblock {us_id}")
    return hp   
+   
+
+
+################ gallery
+
+
+@login_required
+def Gallery_main(request):
+   resp = HttpResponse(f"  Photo lists")
+   return resp   
+   
+   
+@login_required
+def Gallery_main_of_users(request, user: int):
+   resp = HttpResponse(f"  Photos of the {user}")
+   return resp   
+  
+  
+@login_required
+def Gallery_main_of_users(request, user: int, photo: int):
+   resp = HttpResponse(f"  Photo of {user} and photo_id {photo}")
+   return resp   
+  
+@login_required
+def Gallery_photo_removing(request, user: int, photo: int):
+   resp = HttpResponse(f"  {user}  {photo}")
+   return resp   
+    
 
 ############# gifts 
 
