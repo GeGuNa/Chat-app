@@ -50,12 +50,11 @@ margin-top:150px;
 form label {
     display: block;
     margin: 0 22px 10px;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 12px;
+    color: rgb(0 0 0 / 73%);
+    font-size: 16px;
     font-weight: 500;
     line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.006em;
 }
 
 
